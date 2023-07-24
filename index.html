@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Arul Virumbi's CV</title>
+  <title>Arul Virumbi - Resume</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -28,13 +28,86 @@
 
 
   <link href="assets/css/style.css" rel="stylesheet">
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#contactbtn").click(function () {
+
+            fname = $("#fname").val();
+            email = $("#email").val();
+            message = $("#message").val();
+
+            $.ajax({
+                type: "POST",
+                url: "http://arulvirumbi.epizy.com/modules/sendmsg.php",
+                data: "fname=" + fname + "&email=" + email + "&message=" + message,
+                success: function (html) {
+                    if (html == 'true') {
+
+                        $("#add_err7").html('<div class="alert alert-success"> \
+                                             <strong>Message Sent!</strong> \ \
+                                             </div>');
+
+                    } else if (html == 'fname_long') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>First Name</strong> must cannot exceed 50 characters. \ \
+                                             </div>');
+        
+        } else if (html == 'fname_short') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>First Name</strong> must exceed 2 characters. \ \
+                                             </div>');
+                     
+        } else if (html == 'email_long') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>Email</strong> must cannot exceed 50 characters. \ \
+                                             </div>');
+        
+        } else if (html == 'email_short') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>Email</strong> must exceed 2 characters. \ \
+                                             </div>');
+                     
+        } else if (html == 'eformat') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>Email</strong> format incorrect. \ \
+                                             </div>');
+                     
+        } else if (html == 'message_long') {
+                        $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>Message</strong> must cannot exceed 50 characters. \ \
+                                             </div>');
+        
+        } else if (html == 'message_short') {
+                        $("#add_err2").html('<div class="alert alert-danger"> \
+                                             <strong>Message</strong> must exceed 2 characters. \ \
+                                             </div>');
+
+
+                    } else {
+                       $("#add_err7").html('<div class="alert alert-danger"> \
+                                             <strong>Error</strong> processing request. Please try again later. \ \
+                                             </div>');
+                          //$("#add_err7").html(html);
+                    }
+                },
+                beforeSend: function () {
+                    $("#add_err7").html("loading...");
+                }
+            });
+            return false;
+        });
+    });
+</script>
 </head>
 
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
-  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+  <i class="bi bi-list mobile-nav-toggle "></i>
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
 
@@ -55,7 +128,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <h1>Arul Virumbi</h1>
-      <p>I'm <span class="typed" data-typed-items="Web Developer,AI engineer, App Developer"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Web Developer,AI Engineer, App Developer"></span></p>
       <div class="social-links">
         <a href="mailto:arul.virumbi@gmail.com" target="_blank" class="email"><i class="bx bx-envelope"></i></a>
         <a href="https://github.com/ArulVirumbi" target="_blank" class="github"><i class="bx bxl-github"></i></a>
@@ -63,9 +136,10 @@
         <a href="https://www.linkedin.com/in/arul-virumbi-k-a306781b0/" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
+  <!-- End Hero -->
 
-  <main id="main">
+  <main id="main-body">
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -91,7 +165,6 @@
                 <ul>
                   <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>16 May 2002</span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="https://arulvirumbi.github.io/">arulvirumbi.github.io</a></span></li>
-                  
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Chennai, India</span></li>
                 </ul>
               </div>
@@ -118,30 +191,20 @@
                   <p>Chess</p>
                 </div>
                 <div class="interest-item">
-                  <a><i class="fa fa-coffee"></i></a>
-                  <p>Coffee</p>
+                  <a><i class="fas fa-chart-line"></i></a>
+                  <p>Stocks</p>
                 </div>
                 <div class="interest-item">
                   <a><i class="fa fa-music"></i></a>
                   <p>Music</p>
                 </div>
-                <!-- <ul>
-                  <li><a><i class="fa fa-plane"></i></a><p>Travel</p></li>
-                  <li><a><i class="fa fa-chess"></i></a><p>Chess</p></li>
-                  <li><a><i class="fa fa-coffee"></i></a><p>Coffee</p></li>
-                  <li><a><i class="fa fa-music"></i></a><p>Music</p></li>
-              </ul> -->
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End About Section -->
     
-
-   
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
+    <div id="skills" class="skills section-bg">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
@@ -204,7 +267,8 @@
         </div>
 
       </div>
-    </section><!-- End Skills Section -->
+    </div>
+  </section><!-- End About Section -->
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -220,9 +284,9 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Arul Virumbi K</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+              <p><em>I am a helpful and adaptable professional with remarkable leadership and decision-making skills. I have a thirst for learning and a gift for achieving in different and demanding situations.</em></p>
               <ul>
-                <li>Portland par 127,Orlando, FL</li>
+                <li>Chennai, India</li>
                 <li>+91 94999 60424</li>
                 <li>arul.virumbi@gmail.com</li>
               </ul>
@@ -233,35 +297,38 @@
             <div class="resume-item">
               <h4>Bachelor of Engineering</h4>
               <h5>2019 - 2024</h5>
-              <p><em>PSG College of Technology, Coimbatore, India</em></p>
-              <p>Currently</p>
+              <p><em><b>PSG College of Technology, Coimbatore, India</b></em></p>
+              <p>I am currently pursuing an undergraduate degree in Electrical and Electronics Engineering (Sandwich) at PSG College of Technology. I am in my final year of study and have maintained a high academic performance throughout my course. I have also participated in various extracurricular activities and projects related to my field of interest.</p>
             </div>
           </div>
           <div class="col-lg-6">
-            <h3 class="resume-title">Professional Experience</h3>
+            <h3 class="resume-title">Experience</h3>
             <div class="resume-item">
-              <h4>Senior graphic design specialist</h4>
-              <h5>2019 - Present</h5>
-              <p><em>Experion, New York, NY </em></p>
+              <h4>Student Intern</h4>
+              <h5>Dec 2022 - Mar 2023</h5>
+              <p><em>SBNA Technologies, Coimbatore, India</em></p>
               <ul>
-                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
-                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
-                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
-                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+                <li>I learned how to formulate and solve various operations research problems using mathematical modeling and optimization techniques.</li>
+                <li>Developed a college timetabling system using OptaPy, a Python wrapper for OptaPlanner, that can efficiently assign courses, and instructors to different time slots while satisfying various constraints and preferences.</li>
+                <li>Improved my Python, data analysis, and problem-solving abilities by working on real-world projects.</li>
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Graphic design specialist</h4>
-              <h5>2017 - 2018</h5>
-              <p><em>Stepping Stone Advertising, New York, NY</em></p>
+              <h4>Technology Team Head</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>IEEE Students Chapter 12951</br>PSG College of Technology</em></p>
               <ul>
-                <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
-                <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
-                <li>Recommended and consulted with clients on the most appropriate graphic design</li>
-                <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+                <li>Developed Srishti Website for IEEE Students Chapter 12951</li>
+                <li>I led a team of five members in developing the website</li>
+                <li>The website garnered impressive traction, with over 2,000 paid registrations in a month</li>
               </ul>
             </div>
           </div>
+        </div>
+        <div class="resume-download">
+          <a href="Arul Virumbi K.pdf" download="Arul Virumbi K">
+            <button type="button" class="downloadBtn">Download</button>
+          </a>
         </div>
 
       </div>
@@ -273,147 +340,115 @@
 
         <div class="section-title">
           <h2>Projects</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <!-- <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p> -->
         </div>
 
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-            <ul id="portfolio-flters">
+            <ul id="projects-filters">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
               <li data-filter=".filter-web">Web</li>
+              <li data-filter=".filter-ml">ML</li>
             </ul>
           </div>
         </div>
 
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+        
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-web">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/srishti/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>Srishti 2k22</h3>
+                <div>
+                  <a href="assets/img/projects/srishti/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Srishti Website"><i class="bx bx-plus"></i></a>
+                  <a href="projects/srishti.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/CGPAcal/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>CGPA Calculator</h3>
+                <div>
+                  <a href="assets/img/projects/CGPAcal/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="CGPA Calculator"><i class="bx bx-plus"></i></a>
+                  <a href="projects/CGPA_Cal.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/20Seconds/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>20 Seconds</h3>
+                <div>
+                  <a href="assets/img/projects/20Seconds/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="20 Seconds"><i class="bx bx-plus"></i></a>
+                  <a href="projects/20seconds.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-ml">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/adas/cover.jpg" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 2</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>Advanced Driver Assistance System</h3>
+                <div>
+                  <a href="assets/img/projects/adas/cover.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Advanced Driver Assistance System"><i class="bx bx-plus"></i></a>
+                  <a href="projects/adas.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-web">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/SU/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Web 2</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>Students Union PSG Tech</h3>
+                <div>
+                  <a href="assets/img/projects/SU/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Students Union PSG Tech"><i class="bx bx-plus"></i></a>
+                  <a href="projects/su_PSG.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-ml">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/drowsiness_det/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>App</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>Driver Drowsiness Detection</h3>
+                <div>
+                  <a href="assets/img/projects/drowsiness_det/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Driver Drowsiness Detection"><i class="bx bx-plus"></i></a>
+                  <a href="projects/drowsiness_det.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+          <div class="col-lg-4 col-md-6 portfolio-wrap filter-ml">
+            <div class="portfolio-item">
+              <img src="assets/img/projects/signLangProd/cover.png" class="img-fluid" alt="">
               <div class="portfolio-info">
-                <h4>Card 1</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+                <h3>Sign Language Production</h3>
+                <div>
+                  <a href="assets/img/projects/signLangProd/cover.png" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Speech to Sign Language Conversion"><i class="bx bx-plus"></i></a>
+                  <a href="projects/sign_lang_prod.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Card 3</h4>
-                <p>Card</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web 3</h4>
-                <p>Web</p>
-                <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
 
