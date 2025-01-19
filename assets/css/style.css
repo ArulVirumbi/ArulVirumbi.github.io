@@ -23,6 +23,15 @@ h1, h2, h3, h4, h5, h6 {
 .bold{
   font-weight: bold;
 }
+
+@media (min-width: 768px) {
+.tl-10{
+  padding: 1.5rem 0 0 1.5rem;
+}
+.p-10{
+  padding: 1.5rem;
+}
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -682,6 +691,7 @@ section {
   background: #fff;
   border-radius: 50px;
   padding: 2px 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio #projects-filters li {
@@ -1033,8 +1043,8 @@ section {
 # Contact
 --------------------------------------------------------------*/
 .contact .info {
+  padding:1.5rem;
   width: 100%;
-  background: #fff;
 }
 
 .contact .info i {
@@ -1076,8 +1086,8 @@ section {
 }
 
 .contact .php-email-form {
+  padding:1.5rem;
   width: 100%;
-  background: #fff;
 }
 
 .contact .php-email-form .form-group {

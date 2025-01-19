@@ -28,6 +28,7 @@
 
 
   <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/bg.css" rel="stylesheet">
 
 
   <script type="text/javascript">
@@ -105,6 +106,10 @@
 
 <body>
 
+  <div class="background-container">
+    <div class="grid-pattern"></div>
+  </div>
+
   <!-- ======= Mobile nav toggle button ======= -->
   <!-- <button type="button" class="mobile-nav-toggle d-xl-none"><i class="bi bi-list mobile-nav-toggle"></i></button> -->
   <i class="bi bi-list mobile-nav-toggle "></i>
@@ -139,7 +144,7 @@
   </section>
   <!-- End Hero -->
 
-  <main id="main-body">
+  <main id="main-body" >
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
@@ -151,10 +156,10 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4 flex flex-column align-items-center justify-content-center">
             <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
           </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content">
+          <div class="col-lg-8 pt-4 tl-10 content interactive-area">
             <h3>Software Developer.</h3>
             <p class="fst-italic">
               I am excited about the opportunity to contribute to impactful projects and make a meaningful impact through technology.
@@ -286,7 +291,7 @@
           
         </div>
 
-        <div class="row">
+        <div class="row interactive-area p-10">
           <div class="col-lg-6">
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
@@ -494,7 +499,7 @@
         <div class="row mt-1">
 
           <div class="col-lg-4">
-            <div class="info">
+            <div class="info interactive-area">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
@@ -519,7 +524,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form interactive-area">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -565,7 +570,7 @@
   </div>
 </footer><!-- End Footer -->
 
-  </main><!-- End #main -->
+</main><!-- End #main -->
 
 
   <div id="preloader"></div>
@@ -584,6 +589,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/bg.js"></script>
 
 </body>
 
