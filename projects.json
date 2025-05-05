@@ -1,0 +1,83 @@
+[
+    {
+      "title": "Srishti 2k22",
+      "category": "filter-web",
+      "img": "assets/img/projects/srishti/cover.png",
+      "lightbox": "assets/img/projects/srishti/cover.png",
+      "detailsPage": "projects/srishti.html",
+      "lightboxTitle": "Srishti Website"
+    },
+    {
+      "title": "CGPA Calculator",
+      "category": "filter-app",
+      "img": "assets/img/projects/CGPAcal/cover.png",
+      "lightbox": "assets/img/projects/CGPAcal/cover.png",
+      "detailsPage": "projects/CGPA_Cal.html",
+      "lightboxTitle": "CGPA Calculator"
+    },
+    {
+      "title": "20 Seconds",
+      "category": "filter-app",
+      "img": "assets/img/projects/20Seconds/cover.png",
+      "lightbox": "assets/img/projects/20Seconds/cover.png",
+      "detailsPage": "projects/20seconds.html",
+      "lightboxTitle": "20 Seconds"
+    },
+    {
+      "title": "Advanced Driver Assistance System",
+      "category": "filter-ml",
+      "img": "assets/img/projects/adas/cover.jpg",
+      "lightbox": "assets/img/projects/adas/cover.jpg",
+      "detailsPage": "projects/adas.html",
+      "lightboxTitle": "Advanced Driver Assistance System"
+    },
+    {
+      "title": "Students Union PSG Tech",
+      "category": "filter-web",
+      "img": "assets/img/projects/SU/cover.png",
+      "lightbox": "assets/img/projects/SU/cover.png",
+      "detailsPage": "projects/su_PSG.html",
+      "lightboxTitle": "Students Union PSG Tech"
+    },
+    {
+      "title": "Driver Drowsiness Detection",
+      "category": "filter-ml",
+      "img": "assets/img/projects/drowsiness_det/cover.png",
+      "lightbox": "assets/img/projects/drowsiness_det/cover.png",
+      "detailsPage": "projects/drowsiness_det.html",
+      "lightboxTitle": "Driver Drowsiness Detection"
+    },
+    {
+      "title": "Financial Calculators",
+      "category": "filter-web",
+      "img": "assets/img/projects/finCal/cover.png",
+      "lightbox": "assets/img/projects/finCal/cover.png",
+      "detailsPage": "projects/fincal.html",
+      "lightboxTitle": "Financial Calculators"
+    },
+    {
+        "title": "Car Wash Website",
+        "category": "filter-web",
+        "img": "assets/img/projects/carWash/cover.png",
+        "lightbox": "assets/img/projects/carWash/cover.png",
+        "detailsPage": "projects/carwash.html",
+        "lightboxTitle": "Car Wash Website"
+    },
+    {
+        "title": "Focus Flow",
+        "category": "filter-app",
+        "img": "assets/img/projects/focusFlow/cover.png",
+        "lightbox": "assets/img/projects/focusFlow/cover.png",
+        "detailsPage": "projects/focusflow.html",
+        "lightboxTitle": "Focus Flow - Pomodoro timer"
+    },
+    {
+        "title": "Sign Language Production",
+        "category": "filter-ml",
+        "img": "assets/img/projects/signLangProd/cover.png",
+        "lightbox": "assets/img/projects/signLangProd/cover.png",
+        "detailsPage": "projects/sign_lang_prod.html",
+        "lightboxTitle": "Speech to Sign Language Conversion"
+    }
+  ]
+  
