@@ -72,6 +72,14 @@
         "lightboxTitle": "Focus Flow - Pomodoro timer"
     },
     {
+        "title": "Smart Clip",
+        "category": "filter-app",
+        "img": "assets/img/projects/smartClip/cover.png",
+        "lightbox": "assets/img/projects/smartClip/cover.png",
+        "detailsPage": "projects/smartclip.html",
+        "lightboxTitle": "Smart Clip"
+    },
+    {
         "title": "Sign Language Production",
         "category": "filter-ml",
         "img": "assets/img/projects/signLangProd/cover.png",
