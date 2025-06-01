@@ -429,6 +429,35 @@ section {
 .about >div:first-child{
   padding-bottom:60px;
 }
+
+.about .hover-wrap{
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+  -webkit-transition: all .65s cubic-bezier(.05,0.2,.1,1);
+  transition: all .65s cubic-bezier(.05,0.2,.1,1) !important;
+}
+
+.about .hover-wrap:hover{
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95) !important;
+  border-radius: 8px;
+}
+
+.about .hover-wrap .hover-wrap-inner{
+  -webkit-transition: transform .65s cubic-bezier(.05,0.2,.1,1);
+  transition: transform .65s cubic-bezier(.05,0.2,.1,1);
+}
+
+.about .hover-wrap:hover .hover-wrap-inner{
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15) !important;
+}
+
+.about .content{
+  margin-left: 10px !important;
+}
+
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
